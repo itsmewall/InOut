@@ -1,7 +1,6 @@
-# app/models/user.py
-from datetime import datetime
-from sqlalchemy import Column, Integer, String, ForeignKey, DateTime, Boolean
+from sqlalchemy import Column, Integer, String, Boolean, ForeignKey, DateTime
 from sqlalchemy.orm import relationship
+from datetime import datetime
 from app.extensions import db
 
 class User(db.Model):
@@ -12,12 +11,13 @@ class User(db.Model):
     nome = Column(String(120), nullable=False)
     email = Column(String(120), unique=True, nullable=False)
     cpf = Column(String(14), unique=True, nullable=False)
-    senha_hash = Column(String(255), nullable=True)  # opcional (se não usar Gov.br)
+    senha_hash = Column(String(255), nullable=True)  # se não usar Gov.br
     ativo = Column(Boolean, default=True)
     criado_em = Column(DateTime, default=datetime.utcnow)
 
     empresa = relationship("Empresa", back_populates="usuarios")
     formularios = relationship("FormularioPreenchido", back_populates="usuario")
+    assinaturas = relationship("Assinatura", back_populates="usuario")
 
     def __repr__(self):
         return f"<User {self.nome} ({self.email})>"

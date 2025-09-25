@@ -1,0 +1,30 @@
+{
+  "project_name": "InOut",
+  "description": "Sistema para entrada e saída de funcionários com autenticação e assinatura Gov.br.",
+  "mvp_goals": [
+    "Autenticação segura via Gov.br (OAuth 2.0)",
+    "Fluxo sequencial de formulários (wizard com 10 etapas)",
+    "Assinatura eletrônica oficial via API Gov.br"
+  ],
+  "forms": [
+    "Ficha Funcional",
+    "Autorização de Acesso ao IR",
+    "Termo de Opção",
+    "Termo de Sigilo e Responsabilidade",
+    "Inclusão de Dependentes",
+    "Declaração de Relação Familiar",
+    "Declaração de Participação em Empresas",
+    "Requerimento Auxílio Transporte",
+    "Planos de Saúde",
+    "TáxiGov"
+  ],
+  "technologies": [
+    "Flask",
+    "SQLAlchemy + Alembic",
+    "Jinja2",
+    "ReportLab / WeasyPrint",
+    "Requests / HTTPX",
+    "Docker",
+    "pytest"
+  ]
+}
